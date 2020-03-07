@@ -27,16 +27,15 @@ public class ColorSelectionPanel extends JPanel implements MouseListener, Change
 	private JSlider bSlider;
 	JButton what;
 	private Color color;
-	
 	private int r = 0;
 	private int g = 0;
 	private int b = 0;
-	
+	GridPanel gp;
 	private JLabel colorLabel;
 	private BufferedImage colorImage;
 	
-	public ColorSelectionPanel() {
-		
+	public ColorSelectionPanel(GridPanel gp) {
+		this.gp = gp;
 		rSlider = new JSlider(JSlider.VERTICAL);
 		gSlider = new JSlider(JSlider.VERTICAL);
 		bSlider = new JSlider(JSlider.VERTICAL);
@@ -136,7 +135,7 @@ public class ColorSelectionPanel extends JPanel implements MouseListener, Change
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource() == what) {
-			
+		gp.savethepic();
 		}
 	}
 }

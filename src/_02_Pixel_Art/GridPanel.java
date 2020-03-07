@@ -3,7 +3,10 @@ package _02_Pixel_Art;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
-
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import javax.swing.JPanel;
 
 public class GridPanel extends JPanel{
@@ -15,7 +18,7 @@ public class GridPanel extends JPanel{
 	private int pixelHeight;
 	private int rows;
 	private int cols;
-	
+	private static final String DATA_FILE = "stuff.dat";
 	//1. Create a 2D array of pixels. Do not initialize it yet.
 	Pixel[][] pixels;
 	private Color color;
@@ -68,4 +71,16 @@ public class GridPanel extends JPanel{
 			}
 		}
 	}
+	public void savethepic() {
+		save(new SerializedClass(pixels));
+	}
+	
+	private static void save(SerializedClass p) {
+		try (FileOutputStream fos = new FileOutputStream(new File(DATA_FILE)); ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+			oos.writeObject(p);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 }
