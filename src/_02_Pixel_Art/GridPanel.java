@@ -47,7 +47,9 @@ public class GridPanel extends JPanel{
 		}
 		
 	}
-	
+	public GridPanel(SerializedClass h) {
+		pixels = h.pixels;
+	}
 	public void setColor(Color c) {
 		color = c;
 	}

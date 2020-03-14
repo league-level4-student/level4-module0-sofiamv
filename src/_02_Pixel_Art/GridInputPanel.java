@@ -81,6 +81,7 @@ public class GridInputPanel extends JPanel implements ActionListener{
 		// TODO Auto-generated method stub
 		if(e.getSource()==load) {
 			SerializedClass geh = load();
+			GridPanel g = new GridPanel(geh);
 		}
 	}
 	
