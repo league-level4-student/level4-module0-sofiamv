@@ -23,7 +23,9 @@ public class PixelArtMaker implements MouseListener{
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setVisible(true);
 	}
-
+	public void setGP(GridPanel a) {
+		this.gp = a;
+	}
 	public void submitGridData(int w, int h, int r, int c) {
 		gp = new GridPanel(w, h, r, c);
 		csp = new ColorSelectionPanel(gp);
@@ -35,7 +37,17 @@ public class PixelArtMaker implements MouseListener{
 		gp.addMouseListener(this);
 		window.pack();
 	}
-	
+	public void submitGridData(SerializedClass g, int w, int h, int r, int c) {
+		gp = new GridPanel(g);
+		csp = new ColorSelectionPanel(gp);
+		window.remove(gip);
+		window.add(gp);
+		
+		window.add(csp);
+		gp.repaint();
+		gp.addMouseListener(this);
+		window.pack();
+	}
 	public static void main(String[] args) {
 		new PixelArtMaker().start();
 	}

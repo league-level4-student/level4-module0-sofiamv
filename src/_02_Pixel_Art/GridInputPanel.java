@@ -82,6 +82,7 @@ public class GridInputPanel extends JPanel implements ActionListener{
 		if(e.getSource()==load) {
 			SerializedClass geh = load();
 			GridPanel g = new GridPanel(geh);
+			pam.submitGridData(geh, geh.w, geh.h, geh.r, geh.c);
 		}
 	}
 	
