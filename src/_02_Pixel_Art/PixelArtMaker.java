@@ -44,7 +44,7 @@ public class PixelArtMaker implements MouseListener{
 		window.add(gp);
 		
 		window.add(csp);
-		gp.repaint();
+		//gp.repaint();
 		gp.addMouseListener(this);
 		window.pack();
 	}
