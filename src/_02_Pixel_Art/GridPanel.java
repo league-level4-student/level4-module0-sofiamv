@@ -74,7 +74,7 @@ public class GridPanel extends JPanel{
 		}
 	}
 	public void savethepic() {
-		save(new SerializedClass(pixels, windowWidth, windowHeight, rows, cols));
+		save(new SerializedClass(pixels, windowWidth, windowHeight, rows, cols, pixelWidth, pixelHeight));
 	}
 	
 	private static void save(SerializedClass p) {
